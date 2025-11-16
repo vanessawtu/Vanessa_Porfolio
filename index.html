@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vanessa Tu – Data Analyst</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f8f3ea;      /* warm paper background */
+      --text:#191815;
+      --muted:#6b6966;
+      --card:#ffffff;
+      --ring:#ece7df;
+      --shadow:0 8px 30px rgba(0,0,0,.06);
+      --radius:22px;
+      --accent:#131313;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+    }
+    .wrap{max-width:1120px; margin:0 auto; padding:28px 20px 80px;}
+
+    /* NAV */
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      margin-bottom:100px;
+      border-bottom:1px solid var(--ring);
+      padding-bottom:12px;
+    }
+    .nav ul{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+      list-style:none;
+      padding:0;
+      margin:0;
+      color:var(--muted);
+    }
+    .nav a{ color:inherit; text-decoration:none; }
+
+    /* HERO GRID */
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr 1.4fr;
+      gap:48px;
+      align-items:start;
+      margin-bottom:34px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; gap:28px}
+    }
+
+    .profile{ display:grid; gap:16px; align-content:start; }
+    .avatar{
+      width:240px; height:240px; border-radius:24px; overflow:hidden;
+      box-shadow:var(--shadow); border:1px solid var(--ring);
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover}
+    .intro h1{
+      font-family:"DM Serif Display", serif;
+      font-size:46px; line-height:1.1; margin:10px 0 8px;
+    }
+    .intro p{color:var(--muted); margin:0}
+
+    .pitch h2{
+      font-family:"DM Serif Display", serif;
+      font-size:48px; 
+      line-height:1.1; 
+      margin:0 0 18px;
+
+    }
+    .pitch {
+      margin-top: 40px; /* 👈 increases distance from the top */
+    }    
+
+    .right-stack{display:grid; gap:28px}
+
+    /* CAREER HIGHLIGHTS SECTION */
+    .band{
+      background:var(--bg);
+      padding:60px 0;
+      margin:100px 0 0; /* push it lower under hero */
+      border-top:1px solid var(--ring);
+    }
+    .panel{
+      max-width:1120px;        /* wider width */
+      margin-left:0;            /* align to left side of .wrap */
+      margin-right:auto;
+      background:var(--card);
+      border:1px solid var(--ring);
+      border-radius:12px;
+      padding:50px 60px;
+      box-shadow:var(--shadow);
+    }
+    .panel-title{
+      font-family:"DM Serif Display", serif;
+      font-size:38px;
+      margin:0 0 24px;
+      color:var(--text);
+    }
+    .panel-body{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:17px;
+    }
+    .panel-body p{ margin:0 0 12px; }
+    .bullets{ margin:16px 0 0; padding-left:22px; }
+    .bullets li{ margin:12px 0; color:var(--text); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- NAV -->
+    <header class="nav">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Project.html">Projects</a></li>
+          <li><a href="www.linkedin.com/in/vanessa-tu-analytics" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="GitHub.html">GitHub</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <!-- LEFT: avatar + intro -->
+      <div class="profile">
+        <div class="avatar">
+          <img src="Images/ProfilePicture.jpg" alt="Vanessa Tu">
+        </div>
+        <div class="intro">
+          <h1>I’m Vanessa Tu</h1>
+          <p>Data Analyst | Enterprise Data Strategy | Innovation.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: headline -->
+      <div class="right-stack">
+        <div class="pitch">
+          <h2>Empowering organizations with insights that connect data, people, and purpose.</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREER HIGHLIGHTS (below hero, aligned left) -->
+    <section class="band">
+      <div class="panel">
+        <h2 class="panel-title">Hello! </h2>
+        <div class="panel-body">
+          <p>Over the course of my career, I've led high-impact projects that have reshaped how organizations use data and analytics to make strategic decisions:</p>
+          <ul class="bullets">
+            <li><strong>Retail Analytics Transformation</strong> – Spearheaded the transition from Excel/Tableau to Sigma Computing, improving data accessibility and reducing manual processes.</li>
+            <li><strong>Optimizing Enterprise Data Strategy</strong> – Developed the business case for Snowflake renewal, aligning with enterprise data goals.</li>
+            <li><strong>Modernizing Demand Planning & Forecasting</strong> – Led a POC for in-house demand & fulfillment analytics using predictive insights.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
