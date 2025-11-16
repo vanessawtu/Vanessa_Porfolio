@@ -1,179 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vanessa Tu – Data Analyst</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Vanessa Tu – Data Analyst</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+   <!-- Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f8f3ea;      /* warm paper background */
-      --text:#191815;
-      --muted:#6b6966;
-      --card:#ffffff;
-      --ring:#ece7df;
-      --shadow:0 8px 30px rgba(0,0,0,.06);
-      --radius:22px;
-      --accent:#131313;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:var(--text);
-      background:var(--bg);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.6;
-    }
-    .wrap{max-width:1120px; margin:0 auto; padding:28px 20px 80px;}
+   <style>
+      :root {
+         --bg: #f8f3ea;
+         /* warm paper background */
+         --text: #191815;
+         --muted: #6b6966;
+         --card: #ffffff;
+         --ring: #ece7df;
+         --shadow: 0 8px 30px rgba(0, 0, 0, .06);
+         --radius: 22px;
+         --accent: #131313;
+      }
 
-    /* NAV */
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:16px;
-      margin-bottom:100px;
-      border-bottom:1px solid var(--ring);
-      padding-bottom:12px;
-    }
-    .nav ul{
-      display:flex;
-      justify-content:center;
-      gap:22px;
-      list-style:none;
-      padding:0;
-      margin:0;
-      color:var(--muted);
-    }
-    .nav a{ color:inherit; text-decoration:none; }
+      * {
+         box-sizing: border-box
+      }
 
-    /* HERO GRID */
-    .hero{
-      display:grid;
-      grid-template-columns:1.1fr 1.4fr;
-      gap:48px;
-      align-items:start;
-      margin-bottom:34px;
-    }
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; gap:28px}
-    }
+      html,
+      body {
+         height: 100%
+      }
 
-    .profile{ display:grid; gap:16px; align-content:start; }
-    .avatar{
-      width:240px; height:240px; border-radius:24px; overflow:hidden;
-      box-shadow:var(--shadow); border:1px solid var(--ring);
-    }
-    .avatar img{width:100%; height:100%; object-fit:cover}
-    .intro h1{
-      font-family:"DM Serif Display", serif;
-      font-size:46px; line-height:1.1; margin:10px 0 8px;
-    }
-    .intro p{color:var(--muted); margin:0}
+      body {
+         margin: 0;
+         color: var(--text);
+         background: var(--bg);
+         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+         line-height: 1.6;
+      }
 
-    .pitch h2{
-      font-family:"DM Serif Display", serif;
-      font-size:48px; 
-      line-height:1.1; 
-      margin:0 0 18px;
+      .wrap {
+         max-width: 1120px;
+         margin: 0 auto;
+         padding: 28px 20px 80px;
+      }
 
-    }
-    .pitch {
-      margin-top: 40px; /* 👈 increases distance from the top */
-    }    
+      /* NAV */
+      .nav {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 16px;
+         margin-bottom: 100px;
+         border-bottom: 1px solid var(--ring);
+         padding-bottom: 12px;
+      }
 
-    .right-stack{display:grid; gap:28px}
+      .nav ul {
+         display: flex;
+         justify-content: center;
+         gap: 22px;
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         color: var(--muted);
+      }
 
-    /* CAREER HIGHLIGHTS SECTION */
-    .band{
-      background:var(--bg);
-      padding:60px 0;
-      margin:100px 0 0; /* push it lower under hero */
-      border-top:1px solid var(--ring);
-    }
-    .panel{
-      max-width:1120px;        /* wider width */
-      margin-left:0;            /* align to left side of .wrap */
-      margin-right:auto;
-      background:var(--card);
-      border:1px solid var(--ring);
-      border-radius:12px;
-      padding:50px 60px;
-      box-shadow:var(--shadow);
-    }
-    .panel-title{
-      font-family:"DM Serif Display", serif;
-      font-size:38px;
-      margin:0 0 24px;
-      color:var(--text);
-    }
-    .panel-body{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:17px;
-    }
-    .panel-body p{ margin:0 0 12px; }
-    .bullets{ margin:16px 0 0; padding-left:22px; }
-    .bullets li{ margin:12px 0; color:var(--text); }
-  </style>
+      .nav a {
+         color: inherit;
+         text-decoration: none;
+      }
+
+      /* HERO GRID */
+      .hero {
+         display: grid;
+         grid-template-columns: 1.1fr 1.4fr;
+         gap: 48px;
+         align-items: start;
+         margin-bottom: 34px;
+      }
+
+      @media (max-width:900px) {
+         .hero {
+            grid-template-columns: 1fr;
+            gap: 28px
+         }
+      }
+
+      .profile {
+         display: grid;
+         gap: 16px;
+         align-content: start;
+      }
+
+      .avatar {
+         width: 240px;
+         height: 240px;
+         border-radius: 24px;
+         overflow: hidden;
+         box-shadow: var(--shadow);
+         border: 1px solid var(--ring);
+      }
+
+      .avatar img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover
+      }
+
+      .intro h1 {
+         font-family: "DM Serif Display", serif;
+         font-size: 46px;
+         line-height: 1.1;
+         margin: 10px 0 8px;
+      }
+
+      .intro p {
+         color: var(--muted);
+         margin: 0
+      }
+
+      .pitch h2 {
+         font-family: "DM Serif Display", serif;
+         font-size: 48px;
+         line-height: 1.1;
+         margin: 0 0 18px;
+      }
+
+      .pitch {
+         margin-top: 40px;
+         /* 👈 increases distance from the top */
+      }
+
+      .right-stack {
+         display: grid;
+         gap: 28px
+      }
+
+      /* CAREER HIGHLIGHTS SECTION */
+      .band {
+         background: var(--bg);
+         padding: 60px 0;
+         margin: 100px 0 0;
+         /* push it lower under hero */
+         border-top: 1px solid var(--ring);
+      }
+
+      .panel {
+         max-width: 1120px;
+         /* wider width */
+         margin-left: 0;
+         /* align to left side of .wrap */
+         margin-right: auto;
+         background: var(--card);
+         border: 1px solid var(--ring);
+         border-radius: 12px;
+         padding: 50px 60px;
+         box-shadow: var(--shadow);
+      }
+
+      .panel-title {
+         font-family: "DM Serif Display", serif;
+         font-size: 38px;
+         margin: 0 0 24px;
+         color: var(--text);
+      }
+
+      .panel-body {
+         color: var(--muted);
+         line-height: 1.8;
+         font-size: 17px;
+      }
+
+      .panel-body p {
+         margin: 0 0 12px;
+      }
+
+      .bullets {
+         margin: 16px 0 0;
+         padding-left: 22px;
+      }
+
+      .bullets li {
+         margin: 12px 0;
+         color: var(--text);
+      }
+
+      /* Divider line below white panel */
+      .panel-divider {
+         border: none;
+         border-top: 1px solid var(--ring);
+         margin: 10px auto 40px;
+         /* centers the line & adds spacing */
+         width: 100%;
+         /* use full container width */
+         max-width: 1120px;
+         /* matches .panel and .wrap width */
+         opacity: 0.8;
+      }
+
+      /* CONTACT SECTION */
+      .contact-section {
+         background: var(--bg);
+         padding: 40px 0 80px;
+         color: var(--text);
+      }
+
+   
+
+      /* Flex layout for left and right sides */
+      .contact-row {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+         /* stacks nicely on smaller screens */
+         gap: 20px;
+         max-width: 1120px;
+         /* matches your main layout width */
+         margin: 0 auto;
+      }
+
+      /* Left text */
+      .contact-text {
+         flex: 1;
+         min-width: 300px;
+      }
+
+      /* Right email */
+     .contact-email {
+      flex: 1;
+      text-align: left;
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 1200px; /* 👈 moves slightly left */
+}
+
+      .contact-email a {
+         color: var(--text);
+         font-weight: 600;
+         text-decoration: none;
+      }
+
+      .contact-email a:hover {
+         text-decoration: underline;
+      }
+      /* Contact email alignment fix */
+.contact-email p {
+  display: flex;
+  align-items: center;       /* vertically centers the icon and text */
+  gap: 8px;                  /* space between icon and email */
+  margin: 0;
+  justify-content: flex-start; /* aligns them slightly left */
+}
+
+.mail-icon {
+  font-size: 22px;           /* icon size matching text */
+  color: #3c4043;            /* Gmail red tone */
+  vertical-align: middle;
+}
+
+.contact-email a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+   </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+
 </head>
+
 <body>
-  <div class="wrap">
+   <div class="wrap">
 
-    <!-- NAV -->
-    <header class="nav">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Project.html">Projects</a></li>
-          <li><a href="www.linkedin.com/in/vanessa-tu-analytics" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="GitHub.html">GitHub</a></li>
-        </ul>
-      </nav>
-    </header>
+      <!-- NAV -->
+      <header class="nav">
+         <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="Project.html">Projects</a></li>
+               <li><a href="www.linkedin.com/in/vanessa-tu-analytics" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+               <li><a href="GitHub.html">GitHub</a></li>
+            </ul>
+         </nav>
+      </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <!-- LEFT: avatar + intro -->
-      <div class="profile">
-        <div class="avatar">
-          <img src="Images/ProfilePicture.jpg" alt="Vanessa Tu">
-        </div>
-        <div class="intro">
-          <h1>I’m Vanessa Tu</h1>
-          <p>Data Analyst | Enterprise Data Strategy | Innovation.</p>
-        </div>
-      </div>
+      <!-- HERO -->
+      <section class="hero">
+         <!-- LEFT: avatar + intro -->
+         <div class="profile">
+            <div class="avatar">
+               <img src="Images/ProfilePicture.jpg" alt="Vanessa Tu">
+            </div>
+            <div class="intro">
+               <h1>Vanessa Tu</h1>
+               <p>Data Storyteller | Enterprise Data Strategist | Innovation Leader.</p>
+            </div>
+         </div>
 
-      <!-- RIGHT: headline -->
-      <div class="right-stack">
-        <div class="pitch">
-          <h2>Empowering organizations with insights that connect data, people, and purpose.</h2>
-        </div>
-      </div>
-    </section>
+         <!-- RIGHT: headline -->
+         <div class="right-stack">
+            <div class="pitch">
+               <h2>Empowering organizations with insights that connect data, people, and purpose.</h2>
+            </div>
+         </div>
+      </section>
 
-    <!-- CAREER HIGHLIGHTS (below hero, aligned left) -->
-    <section class="band">
-      <div class="panel">
-        <h2 class="panel-title">Hello! </h2>
-        <div class="panel-body">
-          <p>Over the course of my career, I've led high-impact projects that have reshaped how organizations use data and analytics to make strategic decisions:</p>
-          <ul class="bullets">
-            <li><strong>Retail Analytics Transformation</strong> – Spearheaded the transition from Excel/Tableau to Sigma Computing, improving data accessibility and reducing manual processes.</li>
-            <li><strong>Optimizing Enterprise Data Strategy</strong> – Developed the business case for Snowflake renewal, aligning with enterprise data goals.</li>
-            <li><strong>Modernizing Demand Planning & Forecasting</strong> – Led a POC for in-house demand & fulfillment analytics using predictive insights.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <!-- CAREER HIGHLIGHTS (below hero, aligned left) -->
+      <section class="band">
+         <div class="panel">
+            <h2 class="panel-title">Hello! </h2>
+            <div class="panel-body">
+               <p>I’m Vanessa Tu, an analytics leader passionate about transforming complex data into impactful insights that drive organizational growth and innovation. I have a proven ability to bridge the gap between technical analytics and business strategy,empowering teams across the enterprise to understand, trust, and act on their data.</p>
 
-  </div>
+               <p>As a Senior Data Analyst in the retail industry, I lead data-driven strategic initiatives that turn analytics into a business asset for informed decision-making. My work not only accelerates progress toward organizational goals but also cultivates a data-driven culture where every team member can thrive with confidence.</p>
+
+               <p>My technical expertise spans the full spectrum of analytics,from trend reporting and performance dashboards to predictive modeling and scenario analysis. This includes supply chain intelligence, customer segmentation, pricing optimization, and inventory analysis that translate data into actionable enterprise strategies.</p>
+
+               <p>Beyond data, I’m a curious learner and problem-solver, constantly exploring new ways to improve processes and outcomes. I also enjoy mentoring junior analysts and colleagues who are new to the field, helping them grow their confidence and technical skills in analytics.</p>
+            </div>
+      </section>
+      <hr class="panel-divider">
+      <section class="contact-section">
+
+         <div class="contact-grid">
+            <!-- Left side -->
+            <div class="contact-text">
+               <h2 class="panel-title">Contact</h2>
+               <p>Always open to a great conversation about data, strategy, or innovation.</p>
+               <p>Let's connect!</p>
+            </div>
+
+            <!-- Right side -->
+            <div class="contact-email">
+  <p>
+    <span class="material-symbols-outlined mail-icon">mail</span>
+    <a href="mailto:vanessa.w.tu@gmail.com">vanessa.w.tu@gmail.com</a>
+  </p>
+</div>
+         </div>
+      </section>
+   </div>
 </body>
+
 </html>
