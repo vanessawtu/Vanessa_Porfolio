@@ -22,11 +22,16 @@
     }
     *{box-sizing:border-box}
     body{
-      margin:0; background:var(--bg); color:var(--text);
+      margin:0; 
+      background:var(--bg); 
+      color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       line-height:1.6;
     }
-    .wrap{max-width:1120px; margin:0 auto; padding:28px 20px 80px;}
+    .wrap{
+      max-width:1120px; 
+      margin:0 auto; 
+      padding:28px 20px 80px;}
 
     /* Nav (same as home) */
     .nav{display:flex; justify-content:center; gap:16px; margin-bottom:48px; border-bottom:1px solid var(--ring); padding-bottom:12px}
@@ -99,20 +104,21 @@
     <h1 class="page-title">My Work</h1>
     <p class="lead">Analytics project, strategic thinking and process optimization.</p>
 
-    <!-- (Optional) filter chips -->
+    <!-- filter chips -->
     <div class="filters">
-      <button class="chip active">All</button>
-      <button class="chip">Analytics Project</button>
-      <button class="chip">Process Improvement</button>
-      <button class="chip">Strategic Thoughts</button>
-      <button class="chip">Growth Shelf</button>
-    </div>
+      <button class="chip active" data-filter="All">All</button>
+      <button class="chip" data-filter="Analytics Project">Analytics Project</button>
+      <button class="chip" data-filter="Process Improvement">Process Improvement</button>
+      <button class="chip" data-filter="Strategic Thoughts">Strategic Thoughts</button>
+      <button class="chip" data-filter="Growth Shelf">Growth Shelf</button>
+      </div>
+
 
     <!-- Project grid -->
     <section class="grid">
 
       <!-- Project card 1 -->
-      <article class="card">
+      <article class="card" data-category="All">
         <a class="thumb" href="My Work_My Story.html">
           <img src="Images/MusicTherapist.jpg" alt="My Story">
         </a>
@@ -133,7 +139,7 @@
       </article>
 
       <!-- Project Card 2-->
-      <article class="card">
+      <article class="card" data-category="Analytics Project">
         <a class="thumb" href="project-forecasting.html">
           <img src="assets/img/forecasting.jpg" alt="Demand forecasting charts">
         </a>
@@ -153,7 +159,7 @@
       </article>
        
        <!-- Project Card 3-->
-      <article class="card">
+      <article class="card" data-category="Process Improvement">
         <a class="thumb" href="project-forecasting.html">
           <img src="assets/img/forecasting.jpg" alt="Demand forecasting charts">
         </a>
@@ -176,5 +182,32 @@
     </section>
 
   </div>
+   
+<script>
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('.card');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.getAttribute('data-filter');
+
+      // update active chip styling
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      // show / hide cards
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (filter === 'All' || category === filter) {
+          card.style.display = 'flex';   // your cards are flex containers
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
