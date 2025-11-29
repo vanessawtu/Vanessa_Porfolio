@@ -60,7 +60,7 @@
          align-items: center;
          justify-content: center;
          gap: 16px;
-         margin-bottom: 40px;
+         margin-bottom: 48px;
          border-bottom: 1px solid var(--ring);
          padding-bottom: 12px;
       }
@@ -92,27 +92,31 @@
          margin: 0 0 28px
       }
 
-      /* Filters (optional, can remove) */
-      .filters {
-         display: flex;
-         gap: 10px;
-         flex-wrap: wrap;
-         margin: 8px 0 22px
-      }
+     /* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 8px 0 22px;
+}
 
-      .chip {
-         border: 1px solid var(--ring);
-         background: #fff;
-         padding: 8px 12px;
-         border-radius: 999px;
-         cursor: pointer
-      }
+/* Make chips match Page 2 */
+.chip {
+  border: 1px solid var(--ring);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
 
-      .chip.active {
-         background: var(--accent);
-         color: #fff;
-         border-color: transparent
-      }
+/* Active chip state (same as Page 2) */
+.chip.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+
 
       .panel {
          max-width: 1120px;
@@ -237,12 +241,12 @@
 
       <!-- filter chips -->
       <div class="filters">
-  <a class="chip active" href="My Work.html#All">All</a>
-  <a class="chip" href="My Work.html#Analytics Project">Analytics Project</a>
-  <a class="chip" href="My Work.html#Process Improvement">Process Improvement</a>
-  <a class="chip" href="My Work.html#Strategic Thoughts">Strategic Thoughts</a>
-  <a class="chip" href="My Work.html#Growth Shelf">Growth Shelf</a>
-</div>
+         <button class="chip active" onclick="location.href='My Work.html#All'">All</button>
+         <button class="chip" onclick="location.href='My Work.html#Analytics Project'">Analytics Project</button>
+         <button class="chip" onclick="location.href='My Work.html#Process Improvement'">Process Improvement</button>
+         <button class="chip" onclick="location.href='My Work.html#Strategic Thoughts'">Strategic Thoughts</button>
+         <button class="chip" onclick="location.href='My Work.html#Growth Shelf'">Growth Shelf</button>
+      </div>
       <!-- PROJECT CONTENT -->
       <section class="band">
          <div class="panel">
