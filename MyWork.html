@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Projects – Vanessa Tu</title>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+   <style>
+      :root {
+         --bg: #f8f3ea;
+         --text: #191815;
+         --muted: #6b6966;
+         --card: #ffffff;
+         --ring: #ece7df;
+         --shadow: 0 8px 30px rgba(0, 0, 0, .06);
+         --accent: #131313;
+         --radius: 18px;
+      }
+
+      * {
+         box-sizing: border-box
+      }
+
+      body {
+         margin: 0;
+         background: var(--bg);
+         color: var(--text);
+         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+         line-height: 1.6;
+      }
+
+      .wrap {
+         max-width: 1120px;
+         margin: 0 auto;
+         padding: 28px 20px 80px;
+      }
+
+      /* Nav (same as home) */
+      .nav {
+         display: flex;
+         justify-content: center;
+         gap: 16px;
+         margin-bottom: 48px;
+         border-bottom: 1px solid var(--ring);
+         padding-bottom: 12px
+      }
+
+      .nav ul {
+         display: flex;
+         gap: 22px;
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         color: var(--muted)
+      }
+
+      .nav a {
+         color: inherit;
+         text-decoration: none
+      }
+
+      /* Page title */
+      .page-title {
+         font-family: "DM Serif Display", serif;
+         font-size: 48px;
+         line-height: 1.1;
+         margin: 10px 0 6px;
+      }
+
+      .lead {
+         color: var(--muted);
+         margin: 0 0 28px
+      }
+
+      /* Filters (optional, can remove) */
+      .filters {
+         display: flex;
+         gap: 10px;
+         flex-wrap: wrap;
+         margin: 8px 0 22px
+      }
+
+      .chip {
+         border: 1px solid var(--ring);
+         background: #fff;
+         padding: 8px 12px;
+         border-radius: 999px;
+         cursor: pointer
+      }
+
+      .chip.active {
+         background: var(--accent);
+         color: #fff;
+         border-color: transparent
+      }
+
+      /* Project grid */
+      .grid {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 20px
+      }
+
+      @media (max-width:1000px) {
+         .grid {
+            grid-template-columns: repeat(2, 1fr)
+         }
+      }
+
+      @media (max-width:640px) {
+         .grid {
+            grid-template-columns: 1fr
+         }
+      }
+
+      .card {
+         background: var(--card);
+         border: 1px solid var(--ring);
+         border-radius: var(--radius);
+         box-shadow: var(--shadow);
+         overflow: hidden;
+         display: flex;
+         flex-direction: column;
+         transition: transform .18s ease, box-shadow .18s ease;
+      }
+
+      .card:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 14px 36px rgba(0, 0, 0, .08)
+      }
+
+      .thumb {
+         aspect-ratio: 16/9;
+         background: #f2efe8;
+         display: block;
+         overflow: hidden
+      }
+
+      .thumb img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .card-body {
+         padding: 16px 16px 18px
+      }
+
+      .kicker {
+         font-size: 12px;
+         color: var(--muted);
+         letter-spacing: .06em;
+         text-transform: uppercase
+      }
+
+      .card h3 {
+         margin: 6px 0 8px;
+         font-size: 20px
+      }
+
+      .meta {
+         display: flex;
+         gap: 10px;
+         align-items: center;
+         color: var(--muted);
+         font-size: 13px
+      }
+
+      .tags {
+         display: flex;
+         gap: 8px;
+         flex-wrap: wrap;
+         margin-top: 10px
+      }
+
+      .tag {
+         border: 1px solid var(--ring);
+         border-radius: 999px;
+         padding: 4px 8px;
+         font-size: 12px;
+         background: #fff
+      }
+
+      .card-footer {
+         margin-top: auto;
+         padding: 12px 16px;
+         border-top: 1px solid var(--ring);
+         display: flex;
+         justify-content: space-between;
+         align-items: center
+      }
+
+      .btn {
+         padding: 10px 14px;
+         border-radius: 999px;
+         border: 1px solid var(--text);
+         background: #fff;
+         font-weight: 600;
+         text-decoration: none;
+         color: var(--text)
+      }
+
+      .btn.primary {
+         background: var(--accent);
+         color: #fff;
+         border-color: var(--accent)
+      }
+
+      .story-meta {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         margin-bottom: 12px;
+      }
+
+      .story-author-img {
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+
+      .story-author-text {
+         display: flex;
+         flex-direction: column;
+         line-height: 1.2;
+      }
+
+      .story-author-name {
+         font-weight: 600;
+         color: var(--text);
+         font-size: 14px;
+      }
+
+      .story-author-details {
+         font-size: 13px;
+         color: var(--muted);
+      }
+   </style>
+</head>
+
+<body>
+   <div class="wrap">
+
+      <!-- NAV -->
+      <header class="nav">
+         <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="MyWork.html">My Work</a></li>
+               <li><a href="https://www.linkedin.com/in/vanessa-tu-analytics/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+               <li><a href="GitHub.html">GitHub</a></li>
+            </ul>
+         </nav>
+      </header>
+
+      <!-- Page header -->
+      <h1 class="page-title">My Work</h1>
+      <p class="lead">Analytics project, strategic thinking and process optimization.</p>
+
+      <!-- filter chips -->
+      <div class="filters">
+         <button class="chip active" data-filter="All">All</button>
+         <button class="chip" data-filter="Analytics Project">Analytics Project</button>
+         <button class="chip" data-filter="Process Improvement">Process Improvement</button>
+         <button class="chip" data-filter="Strategic Thoughts">Strategic Thoughts</button>
+         <button class="chip" data-filter="Growth Shelf">Growth Shelf</button>
+      </div>
+
+      <!-- Project grid -->
+      <section class="grid">
+
+         <!-- Project card 1 -->
+         <article class="card" data-category="All">
+            <a class="thumb" href="MyWork_FromTherapisttoDataAnalyst.html">
+               <img src="Images/MusicTherapist.jpg" alt="MusicTherapist">
+            </a>
+            <div class="card-body">
+               <div class="story-meta">
+                  <img src="Images/ProfilePictureSquare.jpg" alt="Author photo" class="story-author-img">
+                  <div class="story-author-text">
+                     <div class="story-author-name">Vanessa Tu</div>
+                     <div class="story-author-details">Dec 10 • 2 min read</div>
+                  </div>
+            </div>
+            <h3>From Therapist to Data Analyst</h3>
+            <div class="meta">Career Change • My Story • Empowerment</div>
+            
+   </div>
+   </article>
+
+   <!-- Project Card 2-->
+   <article class="card" data-category="Analytics Project">
+      <a class="thumb" href="MyWork_IntelligenceSupplyChain.html">
+         <img src="Images/IntelligenceSupplyChain.jpg" alt="IntelligenceSupplyChain">
+      </a>
+      <div class="card-body">
+         <div class="story-meta">
+                  <img src="Images/ProfilePictureSquare.jpg" alt="Author photo" class="story-author-img">
+                  <div class="story-author-text">
+                     <div class="story-author-name">Vanessa Tu</div>
+                     <div class="story-author-details">Dec 24 • 10 min read</div>
+                  </div>
+         </div>
+         <h3>Intellience Supply Chain</h3>
+         <div class="meta">Python • Linear Programming • Jupiter Notebook</div>
+        
+      </div>
+     
+   </article>
+
+   <!-- Project Card 3-->
+   <article class="card" data-category="Process Improvement">
+      <a class="thumb" href="MyWork_DataFlowAlert.html">
+         <img src="Images/DataFlowAlert.jpg" alt="DataFlowAlert">
+      </a>
+      <div class="card-body">
+         <div class="story-meta">
+                  <img src="Images/ProfilePictureSquare.jpg" alt="Author photo" class="story-author-img">
+                  <div class="story-author-text">
+                     <div class="story-author-name">Vanessa Tu</div>
+                     <div class="story-author-details">Jan 1 • 8 min read</div>
+                  </div>
+        </div>
+         <h3>Data Flow Alert</h3>
+         <div class="meta">SQL • Proactive • Databricks</div>
+         
+      </div>
+      
+   </article>
+    <!-- Project Card 4-->
+   <article class="card" data-category="Analytics Project">
+      <a class="thumb" href="MyWork_BasketAnalysis.html">
+         <img src="Images/BasketAnalysis.jpg" alt="BasketAnalysis">
+      </a>
+      <div class="card-body">
+         <div class="story-meta">
+                  <img src="Images/ProfilePictureSquare.jpg" alt="Author photo" class="story-author-img">
+                  <div class="story-author-text">
+                     <div class="story-author-name">Vanessa Tu</div>
+                     <div class="story-author-details">Feb 8 • 12 min read</div>
+                  </div>
+        </div>
+         <h3>Basket Analysis</h3>
+         <div class="meta">Python • SQL • Databricks • Power BI</div>
+         
+      </div>
+      
+   </article>
+
+   <!-- Add more cards by duplicating the <article class="card"> block -->
+   </section>
+
+   </div>
+
+   <script>
+      const chips = document.querySelectorAll('.chip');
+      const cards = document.querySelectorAll('.card');
+
+      function applyFilter(filter) {
+         // update active chip styling
+         chips.forEach(c => c.classList.remove('active'));
+         const activeChip = Array.from(chips).find(c => c.getAttribute('data-filter') === filter);
+         if (activeChip) {
+            activeChip.classList.add('active');
+         }
+         // show / hide cards
+         cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filter === 'All' || category === filter) {
+               card.style.display = 'flex'; // cards are flex containers
+            } else {
+               card.style.display = 'none';
+            }
+         });
+      }
+      // click behavior
+      chips.forEach(chip => {
+         chip.addEventListener('click', () => {
+            const filter = chip.getAttribute('data-filter');
+            applyFilter(filter);
+            // also update the hash in the URL (optional but nice)
+            window.location.hash = encodeURIComponent(filter);
+         });
+      });
+      // on page load, read the hash and apply the right filter
+      window.addEventListener('DOMContentLoaded', () => {
+         let hash = decodeURIComponent(window.location.hash.replace('#', ''));
+         if (!hash) {
+            hash = 'All'; // default
+         }
+         applyFilter(hash);
+      });
+   </script>
+
+</body>
+
+</html>
