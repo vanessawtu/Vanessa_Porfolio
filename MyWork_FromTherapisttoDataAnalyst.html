@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>Vanessa Tu – My Work_My Story</title>
+   <title>Vanessa Tu – MyWork_FromTherpisttoDataAnalyst</title>
 
    <!-- Fonts -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,6 +218,36 @@
       .contact-email a:hover {
          text-decoration: underline;
       }
+      .story-meta {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         margin-bottom: 12px;
+      }
+
+      .story-author-img {
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+
+      .story-author-text {
+         display: flex;
+         flex-direction: column;
+         line-height: 1.2;
+      }
+
+      .story-author-name {
+         font-weight: 600;
+         color: var(--text);
+         font-size: 14px;
+      }
+
+      .story-author-details {
+         font-size: 13px;
+         color: var(--muted);
+      }
    </style>
 </head>
 
@@ -229,7 +259,7 @@
          <nav>
             <ul>
                <li><a href="index.html">Home</a></li>
-               <li><a href="My Work.html">My Work</a></li>
+               <li><a href="MyWork.html">My Work</a></li>
                <li><a href="https://www.linkedin.com/in/vanessa-tu-analytics" target="_blank">LinkedIn</a></li>
                <li><a href="GitHub.html">GitHub</a></li>
             </ul>
@@ -242,26 +272,41 @@
       <!-- filter chips -->
       <div class="filters">
          <button class="chip active" onclick="location.href='My Work.html#All'">All</button>
-         <button class="chip" onclick="location.href='My Work.html#Analytics Project'">Analytics Project</button>
-         <button class="chip" onclick="location.href='My Work.html#Process Improvement'">Process Improvement</button>
-         <button class="chip" onclick="location.href='My Work.html#Strategic Thoughts'">Strategic Thoughts</button>
-         <button class="chip" onclick="location.href='My Work.html#Growth Shelf'">Growth Shelf</button>
+         <button class="chip" onclick="location.href='MyWork.html#Analytics Project'">Analytics Project</button>
+         <button class="chip" onclick="location.href='MyWork.html#Process Improvement'">Process Improvement</button>
+         <button class="chip" onclick="location.href='MyWork.html#Strategic Thoughts'">Strategic Thoughts</button>
+         <button class="chip" onclick="location.href='MyWork.html#Growth Shelf'">Growth Shelf</button>
       </div>
       <!-- PROJECT CONTENT -->
       <section class="band">
          <div class="panel">
-            <h2 class="panel-title">My Story</h2>
+          <div class="story-meta">
+                  <img src="Images/ProfilePictureSquare.jpg" alt="Author photo" class="story-author-img">
+                  <div class="story-author-text">
+                     <div class="story-author-name">Vanessa Tu</div>
+                     <div class="story-author-details">Dec 10 • 3 min read</div>
+                  </div>
+            </div>
+            <h2 class="panel-title">From Therapist to Data Analyst </h2>
 
             <div class="panel-body">
-               <p>This case study showcases how I led a retail analytics transformation initiative using <strong>Sigma</strong>, <strong>Snowflake</strong>, and <strong>Power BI</strong> to improve data accessibility and empower business teams with self-service insights.</p>
 
-               <p><strong>Objective:</strong> Modernize analytics workflows and improve data trust across the enterprise.</p>
+               
+               <p>I never imagined I would become a Data Analyst, writing code, solving analytical problems, and getting excited about uncovering insights. My career began in music therapy, where I used evidence-based musical interventions to help clients reach individualized goals. I thrived in building therapeutic relationships and understanding how patterns in music influenced emotional, physical, and psychological outcomes.</p>
 
-               <p><strong>Impact:</strong> Reduced manual reporting time by 60%, enhanced visibility into key performance metrics, and created an analytics foundation that supported cross-department collaboration.</p>
+               <p>That fascination with patterns and human behavior became the bridge that led me into analytics. I pursued a Master’s in Business Analytics, where I built optimization models, analyzed financial scenarios, and designed dashboards that brought data to life. These projects grounded me in connecting statistical concepts to real-world business needs.</p>
 
-               <p><strong>Tools Used:</strong> Sigma Computing, Snowflake, Power BI, SQL</p>
+               <p>At Do it Best Corp, a member-owned hardware, lumber, and building materials cooperative—I began as an analytics intern before transitioning into a full-time Data Analyst. Working with cross-functional teams, I helped deliver analytical solutions while strengthening the organization’s data-driven culture.</p>
 
-               <a href="My Work.html" class="btn">← Back to My Work</a>
+                 
+               <p> As a Senior Data Analyst, my mission is to drive growth and operational efficiency by turning complex datasets into actionable insights. I conduct advanced analyses such as time-series and basket analysis to support strategies projected to increase revenue by 8–10% through identifying high-value products and cross-sell opportunities. I also design and maintain essential reporting infrastructure, including dashboards for warehouse operations and trade show analytics that support over $40M in sales. This work requires strong data engineering and modeling skills to ensure scalability and accuracy.</p>
+
+                  My role extends into strategic leadership and data governance. I partner with business division to standardize KPIs, build a semantic layer, and establish an enterprise metric framework. I also lead the Self-Service Analytics program, from BI tool evaluation to adoption and governance- empowering hundreds of business users with reliable, accessible easy to use data.
+
+               <p>In the end, whether through music or data, I’ve always cared about helping people reach their goal. Today, that means empowering organizations with insights that connect data, people, and purpose.</p>
+
+
+               <a href="MyWork.html" class="btn">← Back to My Work</a>
             </div>
          </div>
       </section>
