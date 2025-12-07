@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Vanessa Tu – My Work_My Story</title>
+
+   <!-- Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+
+   <style>
+      :root {
+         --bg: #f8f3ea;
+         --text: #191815;
+         --muted: #6b6966;
+         --card: #ffffff;
+         --ring: #ece7df;
+         --shadow: 0 8px 30px rgba(0, 0, 0, .06);
+         --accent: #131313;
+         --radius: 18px;
+      }
+
+      * {
+         box-sizing: border-box;
+      }
+
+      html,
+      body {
+         height: 100%;
+      }
+
+      .band {
+         background: var(--bg);
+         padding: 60px 0;
+         margin: 20px 0 0;
+         border-top: none;
+      }
+
+      body {
+         margin: 0;
+         color: var(--text);
+         background: var(--bg);
+         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         line-height: 1.6;
+      }
+
+      .wrap {
+         max-width: 1120px;
+         margin: 0 auto;
+         padding: 28px 20px 80px;
+      }
+
+      /* NAV */
+      .nav {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 16px;
+         margin-bottom: 48px;
+         border-bottom: 1px solid var(--ring);
+         padding-bottom: 12px;
+      }
+
+      .nav ul {
+         display: flex;
+         gap: 22px;
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         color: var(--muted);
+      }
+
+      .nav a {
+         color: inherit;
+         text-decoration: none;
+      }
+
+      /* Page title */
+      .page-title {
+         font-family: "DM Serif Display", serif;
+         font-size: 48px;
+         line-height: 1.1;
+         margin: 10px 0 6px;
+      }
+
+      .lead {
+         color: var(--muted);
+         margin: 0 0 28px
+      }
+
+      /* Filters */
+      .filters {
+         display: flex;
+         gap: 10px;
+         flex-wrap: wrap;
+         margin: 8px 0 22px;
+      }
+
+      /* Make chips match Page 2 */
+      .chip {
+         border: 1px solid var(--ring);
+         background: #fff;
+         padding: 8px 12px;
+         border-radius: 999px;
+         cursor: pointer;
+      }
+
+      /* Active chip state (same as Page 2) */
+      .chip.active {
+         background: var(--accent);
+         color: #fff;
+         border-color: transparent;
+      }
+
+      .panel {
+         max-width: 1120px;
+         margin-left: 0;
+         margin-right: auto;
+         background: var(--card);
+         border: 1px solid var(--ring);
+         border-radius: 12px;
+         padding: 50px 60px;
+         box-shadow: var(--shadow);
+      }
+
+      .panel-title {
+         font-family: "DM Serif Display", serif;
+         font-size: 38px;
+         margin: 0 0 24px;
+         color: var(--text);
+      }
+
+      .panel-body {
+         font-size: 17px;
+         line-height: 1.8;
+         color: var(--muted);
+      }
+
+      .panel-body p {
+         margin: 0 0 16px;
+      }
+
+      /* BACK BUTTON */
+      .btn {
+         display: inline-block;
+         margin-top: 20px;
+         padding: 10px 18px;
+         font-size: 14px;
+         border: 1px solid var(--text);
+         border-radius: 999px;
+         text-decoration: none;
+         color: var(--text);
+         font-weight: 600;
+         transition: .2s;
+      }
+
+      .btn:hover {
+         background: var(--text);
+         color: var(--card);
+      }
+
+      /* DIVIDER BELOW PANEL */
+      .panel-divider {
+         border: none;
+         border-top: 1px solid var(--ring);
+         margin: 24px auto 32px;
+         width: 100%;
+         max-width: 1120px;
+         opacity: .8;
+      }
+
+      /* CONTACT SECTION */
+      .contact-section {
+         background: var(--bg);
+         padding: 20px 0 64px;
+         color: var(--text);
+      }
+
+      .contact-row {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 20px;
+         max-width: 1120px;
+         margin: 0 auto;
+      }
+
+      .contact-text {
+         flex: 1;
+         min-width: 300px;
+      }
+
+      .contact-email {
+         flex: 1;
+         min-width: 300px;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+      }
+
+      .mail-icon {
+         font-size: 22px;
+         color: #3c4043;
+      }
+
+      .contact-email a {
+         color: var(--text);
+         font-weight: 600;
+         text-decoration: none;
+      }
+
+      .contact-email a:hover {
+         text-decoration: underline;
+      }
+
+      .story-meta {
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         margin-bottom: 12px;
+      }
+
+      .story-author-img {
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+
+      .story-author-text {
+         display: flex;
+         flex-direction: column;
+         line-height: 1.2;
+      }
+
+      .story-author-name {
+         font-weight: 600;
+         color: var(--text);
+         font-size: 14px;
+      }
+
+      .story-author-details {
+         font-size: 13px;
+         color: var(--muted);
+      }
+
+      .case-summary {
+         border: none !important;
+         box-shadow: none !important;
+      }
+
+      .case-summary h2 {
+         font-family: "DM Serif Display", serif;
+         font-size: 38px;
+         font-weight: 600;
+         margin-top: 48px;
+         margin-bottom: 12px;
+         line-height: 1.1;
+         color: var(--text);
+      }
+
+      .case-summary h3 {
+         font-family: "DM Serif Display", serif;
+         font-size: 24px;
+         font-weight: 400;
+         margin-top: 48px;
+         margin-bottom: 12px;
+         line-height: 1.1;
+      }
+
+      .case-summary h4 {
+         margin-top: 18px;
+         margin-bottom: 6px;
+         font-weight: 600;
+      }
+
+      .case-summary p,
+      .case-summary ul {
+         color: var(--muted);
+         margin-bottom: 16px;
+      }
+
+      .case-summary ul {
+         padding-left: 20px;
+      }
+
+      .repo-btn {
+         display: inline-block;
+         padding: 10px 18px;
+         font-size: 14px;
+         background-color: var(--accent);
+         color: white;
+         border-radius: 999px;
+         text-decoration: none;
+         font-weight: 600;
+         margin: 24px 0;
+      }
+
+      .repo-btn:hover {
+         background-color: #000;
+        
+         
+      }
+   </style>
+</head>
+
+<body>
+   <div class="wrap">
+
+      <!-- NAV -->
+      <header class="nav">
+         <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="MyWork.html">My Work</a></li>
+               <li><a href="https://www.linkedin.com/in/vanessa-tu-analytics" target="_blank">LinkedIn</a></li>
+               <li><a href="https://github.com/vanessawtu" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+         </nav>
+      </header>
+      <!-- Page header -->
+      <h1 class="page-title">My Work</h1>
+      <p class="lead">Analytics project, strategic thinking and process optimization.</p>
+
+      <!-- filter chips -->
+      <div class="filters">
+         <button class="chip active" onclick="location.href='MyWork.html#All'">All</button>
+         <button class="chip" onclick="location.href='MyWork.html#Analytics Project'">Analytics Project</button>
+         <button class="chip" onclick="location.href='MyWork.html#Process Improvement'">Process Improvement</button>
+         <button class="chip" onclick="location.href='MyWork.html#Strategic Thoughts'">Strategic Thoughts</button>
+         <button class="chip" onclick="location.href='MyWork.html#Growth Shelf'">Growth Shelf</button>
+      </div>
+      <!-- PROJECT CONTENT -->
+      <section class="band">
+         <div class="panel">
+            <div class="story-meta">
+               <img src="Images/ProfilePictureSquare.jpg" alt="Author photo" class="story-author-img">
+               <div class="story-author-text">
+                  <div class="story-author-name">Vanessa Tu</div>
+                  <div class="story-author-details">Dec 10 • 10 min read</div>
+               </div>
+            </div>
+
+            <div class="panel-body">
+
+               <section class="case-summary">
+
+                  <h2>How I Used Linear Programming to Optimize the Supply Chain Under Constraints</h2>
+
+                  <a href="https://github.com/vanessawtu/Linear_Programming" target="_blank" rel="noopener noreferrer" class="repo-btn">View My Code Example ↗ </a>
+
+                  <p>
+                     Hanover Inc. is a company that makes fiber-optic products and sells them around the world. Demand for its three main products is expected to grow steadily over the next several years, and leadership wants to know whether their current factories can handle that growth or if they need to invest in a new facility.
+                  </p>
+                  <p>
+                     To answer this, the project explores three key questions: Can the two existing factories keep up with future demand? If not, where should a new factory be built? And how should production be allocated among factories and customers so that Hanover meets demand at the lowest overall cost?
+                  </p>
+                  <p>
+                     The analysis uses linear programming, an optimization method that combines cost and capacity information to find the most efficient production plan.
+                  </p>
+
+                  <h3>What data was used?</h3>
+                  <p>Hanover provided a range of business inputs, including:</p>
+
+                  <h4>Factories</h4>
+                  <p>
+                     Existing plants in Austin and Paris, along with several potential new locations across the United States, Europe, Asia, Africa, and Australia. Each site has different operating costs and can run at different capacity levels.
+                  </p>
+
+                  <h4>Products</h4>
+                  <p>
+                     Three fiber-optic products, each with different manufacturing costs depending on the factory.
+                  </p>
+
+                  <h4>Customers and Demand</h4>
+                  <p>
+                     Customers are grouped into regions such as Malaysia, China, France, Brazil, and the four United States regions. Each has a forecasted need for each product.
+                  </p>
+
+                  <h4>Costs that Affect Profitability</h4>
+                  <ul>
+                     <li> Fixed operating costs for each factory</li>
+                     <li> Variable production costs for each product</li>
+                     <li> Transportation costs from each factory to each customer</li>
+                     <li> Import duties and selling prices in each region</li>
+                  </ul>
+                  <p>
+                     Altogether, these data points show how expensive it is to make and deliver each product and how much revenue Hanover can expect.
+                  </p>
+
+                  <h3>First insight: existing factories are not enough</h3>
+                  <p>
+                     When future demand is compared to the capabilities of the current factories, it becomes clear that Austin and Paris cannot meet projected customer needs, even if both operate at maximum capacity. This means additional capacity—in the form of a new factory—is necessary.
+                  </p>
+
+                  <h3>Comparing candidate locations</h3>
+                  <p>
+                     The analysis then compares potential factory sites. Some locations have low operating costs but high shipping costs, while others are closer to customers but more expensive to run. Using a benefit-cost perspective, the analysis evaluates how much value each location provides relative to its cost. Expanded capacity in Paris performs well under this measure, and among new sites, India and South Africa show strong potential.
+                  </p>
+                  <p>
+                     However, these comparisons alone are not enough because shipping, duties, and selling prices also play a major role. This is why the optimization model is necessary.
+                  </p>
+
+                  <h3>How the optimization model helps</h3>
+                  <p>
+                     The optimization model asks a practical question: With all available options, where should products be made and which factory should serve which customer to minimize total cost while meeting all demand?
+                  </p>
+                  <p>
+                     The model determines which factories are open, how much they produce, and how shipments are assigned. It also enforces logical constraints, such as ensuring no factory exceeds its capacity and every customer receives at least the amount they need.
+                  </p>
+                  <p>
+                     When the model includes only Austin and Paris, it reports no feasible solution. This confirms that a third factory is required.
+                  </p>
+
+                  <h3>Key recommendation: expand and build in South Africa</h3>
+                  <p>
+                     The model then tests scenarios where Austin and Paris are expanded and a third plant is added in different locations. Across these scenarios, a consistent pattern emerges: it is cost-effective to expand both existing factories and build a new one in South Africa.
+                  </p>
+                  <p>
+                     In the most efficient plan, South Africa operates at a high capacity and supports customers in Malaysia, China, Brazil, and parts of the United States. Austin and Paris continue to produce significant quantities, though Paris does not need to run at full capacity.
+                  </p>
+                  <p>
+                     This combination provides enough total capacity to meet all forecast demand while minimizing cost and maximizing profit.
+                  </p>
+
+                  <h3>Important caveat</h3>
+                  <p>
+                     Although the analysis includes detailed operating and shipping costs, it does not include the one-time construction cost of building a new factory. This cost could be significant. Before making a final investment decision, Hanover should estimate these expenses and run a follow-up analysis that includes them.
+                  </p>
+
+                  <h3>Conclusion</h3>
+                  <p>
+                     The analysis shows that Hanover’s existing factories cannot meet future demand on their own. By combining production, transportation, and duty cost information, the optimization model identifies the most cost-effective strategy: expand Austin and Paris and build a new factory in South Africa. With additional evaluation of start-up construction costs, Hanover can turn this plan into a long-term strategy for growth.
+                  </p>
+                  <a href="MyWork.html" class="btn">← Back to My Work</a>
+               </section>
+
+               
+
+      </section>
+
+      
+   </div>
+   </div>
+   </section>
+
+   <!-- DIVIDER -->
+   <hr class="panel-divider">
+
+   </div>
+
+</body>
+
+</html>
