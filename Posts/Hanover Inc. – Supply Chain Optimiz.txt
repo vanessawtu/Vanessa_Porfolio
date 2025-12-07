@@ -1,0 +1,53 @@
+Overview
+Hanover Inc. is a company that makes fiber-optic products and sells them around the world. Demand for its three main products is expected to grow steadily over the next several years, and leadership wants to know whether their current factories can handle that growth or if they need to invest in a new facility.
+
+To answer this, the project explores three key questions: Can the two existing factories keep up with future demand? If not, where should a new factory be built? And how should production be allocated among factories and customers so that Hanover meets demand at the lowest overall cost?
+
+The analysis uses linear programming, an optimization method that combines cost and capacity information to find the most efficient production plan.
+
+What data was used?
+Hanover provided a range of business inputs, including:
+
+Factories
+Existing plants in Austin and Paris, along with several potential new locations across the United States, Europe, Asia, Africa, and Australia. Each site has different operating costs and can run at different capacity levels.
+
+Products
+Three fiber-optic products, each with different manufacturing costs depending on the factory.
+
+Customers and Demand
+Customers are grouped into regions such as Malaysia, China, France, Brazil, and the four United States regions. Each has a forecasted need for each product.
+
+Costs that Affect Profitability
+Fixed operating costs for each factory
+Variable production costs for each product
+Transportation costs from each factory to each customer
+Import duties and selling prices in each region
+Altogether, these data points show how expensive it is to make and deliver each product and how much revenue Hanover can expect.
+
+First insight: existing factories are not enough
+When future demand is compared to the capabilities of the current factories, it becomes clear that Austin and Paris cannot meet projected customer needs, even if both operate at maximum capacity. This means additional capacity—in the form of a new factory—is necessary.
+
+Comparing candidate locations
+The analysis then compares potential factory sites. Some locations have low operating costs but high shipping costs, while others are closer to customers but more expensive to run. Using a benefit-cost perspective, the analysis evaluates how much value each location provides relative to its cost. Expanded capacity in Paris performs well under this measure, and among new sites, India and South Africa show strong potential.
+
+However, these comparisons alone are not enough because shipping, duties, and selling prices also play a major role. This is why the optimization model is necessary.
+
+How the optimization model helps
+The optimization model asks a practical question: With all available options, where should products be made and which factory should serve which customer to minimize total cost while meeting all demand?
+
+The model determines which factories are open, how much they produce, and how shipments are assigned. It also enforces logical constraints, such as ensuring no factory exceeds its capacity and every customer receives at least the amount they need.
+
+When the model includes only Austin and Paris, it reports no feasible solution. This confirms that a third factory is required.
+
+Key recommendation: expand and build in South Africa
+The model then tests scenarios where Austin and Paris are expanded and a third plant is added in different locations. Across these scenarios, a consistent pattern emerges: it is cost-effective to expand both existing factories and build a new one in South Africa.
+
+In the most efficient plan, South Africa operates at a high capacity and supports customers in Malaysia, China, Brazil, and parts of the United States. Austin and Paris continue to produce significant quantities, though Paris does not need to run at full capacity.
+
+This combination provides enough total capacity to meet all forecast demand while minimizing cost and maximizing profit.
+
+Important caveat
+Although the analysis includes detailed operating and shipping costs, it does not include the one-time construction cost of building a new factory. This cost could be significant. Before making a final investment decision, Hanover should estimate these expenses and run a follow-up analysis that includes them.
+
+Conclusion
+The analysis shows that Hanover’s existing factories cannot meet future demand on their own. By combining production, transportation, and duty cost information, the optimization model identifies the most cost-effective strategy: expand Austin and Paris and build a new factory in South Africa. With additional evaluation of start-up construction costs, Hanover can turn this plan into a long-term strategy for growth.

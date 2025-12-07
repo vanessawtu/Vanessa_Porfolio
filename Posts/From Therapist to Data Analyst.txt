@@ -1,0 +1,11 @@
+From Therapist to Data Analyst
+
+I never imagined I would become a Data Analyst, writing code, solving analytical challenges, and genuinely enjoying the process of uncovering insights. My career began in music therapy, where I used evidence-based musical interventions to help clients reach individualized goals. I thrived in building relationships, understanding each client’s needs, and exploring how patterns in music could influence emotional, physical, and psychological outcomes.
+
+That fascination with patterns and human behavior eventually became the bridge that led me into analytics. I pursued a Master’s in Business Analytics, where I built optimization models, analyzed financial scenarios, and created dashboards that made the story of data to life. These projects helped me connect statistical concepts to real-world business challenges and made me realize how similar my approach was to the way I worked as a music therapist.
+
+Before beginning any music therapy treatment, I always started by listening and observing my clients’ abilities. I avoided assumptions and collected baseline information across different dimensions of well-being. Once I identified an individualized goal that was both approachable and meaningful, I implemented interventions tailored to their needs.
+
+That same mindset guides my work in analytics. I begin by exploring the data without preconceived answers, understanding the baseline, and identifying what truly matters. From there, I develop insights and recommendations that support different areas of the business in making thoughtful, informed decisions.
+
+In the end, whether through music or data, I have always cared about helping people reach their goals. Today, that means empowering organizations with insights that connect data, people, and purpose.
