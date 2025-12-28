@@ -118,6 +118,8 @@
 
 
 
+      
+
       .panel {
          max-width: 1120px;
          margin-left: 0;
@@ -135,7 +137,16 @@
          margin: 0 0 24px;
          color: var(--text);
       }
-
+      .panel-body h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: 38px;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      line-height: 1.1;
+      color: var(--text);
+      max-width: 800px;
+      }
       .panel-body {
          font-size: 17px;
          line-height: 1.8;
@@ -249,6 +260,23 @@
          font-size: 13px;
          color: var(--muted);
       }
+       .repo-btn {
+         display: inline-block;
+         padding: 10px 18px;
+         font-size: 14px;
+         background-color: var(--accent);
+         color: white;
+         border-radius: 999px;
+         text-decoration: none;
+         font-weight: 600;
+         margin: 24px 0;
+      }
+
+      .repo-btn:hover {
+         background-color: #000;
+        
+         
+      }
    </style>
 </head>
 
@@ -272,7 +300,7 @@
 
       <!-- filter chips -->
       <div class="filters">
-         <button class="chip active" onclick="location.href='My Work.html#All'">All</button>
+         <button class="chip active" onclick="location.href='MyWork.html#All'">All</button>
          <button class="chip" onclick="location.href='MyWork.html#Analytics Project'">Analytics Project</button>
          <button class="chip" onclick="location.href='MyWork.html#Process Improvement'">Process Improvement</button>
          <button class="chip" onclick="location.href='MyWork.html#Strategic Thoughts'">Strategic Thoughts</button>
@@ -288,20 +316,84 @@
                      <div class="story-author-details">Dec 10 • 2 min read</div>
                   </div>
             </div>
-            <h2 class="panel-title">Coming Soon! </h2>
-
+           
             <div class="panel-body">
+               <h2>How I Used SQL to be proactive on data issue</h2>
 
+                  <a href="https://github.com/vanessawtu/Process_Improvement" target="_blank" rel="noopener noreferrer" class="repo-btn">View My Code Example ↗ </a>
                
-               <!-- 
-               <p>This case study showcases how I led a retail analytics transformation initiative using <strong>Sigma</strong>, <strong>Snowflake</strong>, and <strong>Power BI</strong> to improve data accessibility and empower business teams with self-service insights.</p>
+                <p>
+    We were swamped with questions about data.
+  </p>
 
-               <p><strong>Objective:</strong> Modernize analytics workflows and improve data trust across the enterprise.</p>
+  <p>
+    From analysts building reports for their divisions.<br>
+    From dashboard users relying on tools our team had built.<br>
+    From executives who needed “numbers” for upcoming board meetings.
+  </p>
 
-               <p><strong>Impact:</strong> Reduced manual reporting time by 60%, enhanced visibility into key performance metrics, and created an analytics foundation that supported cross-department collaboration.</p>
+  <p>
+    This was six months after our company’s ERP implementation. Our data cloud platform, just one year old, had become the new single source of truth for analytics across the organization, supporting the new ERP system. While business users were still learning the new tools, engineers were simultaneously fixing bugs and building new features. Upstream systems were still evolving, and instability and unknowns remained.
+  </p>
 
-               <p><strong>Tools Used:</strong> Sigma Computing, Snowflake, Power BI, SQL</p>
-               -->
+  <p>
+    At any given time, Sally from Finance might ask one member of our team why the fill rate looked unusually low. Jason might ask someone else to export all the data from a dashboard because he didn’t trust that all records were being captured. Meanwhile, John from the warehouse questioned yet another teammate about why the numbers on the dashboard didn’t match a spreadsheet he had built. All of these questions were coming to different people on our team—about the same underlying data issues.
+  </p>
+
+  <p>
+    We could certainly improve our communication, but I found myself asking a deeper question:
+    <em>Is there something we can do to be more proactive?</em>
+  </p>
+
+  <p>
+    What if we had a way to get a heads-up when expected data didn’t arrive?
+  </p>
+
+  <p>
+    I immediately began exploring whether the tools we already had could support a more proactive approach. That’s when I discovered Databricks’ <strong>Alert</strong> feature, which allows alerts to be built directly using SQL. Even better, these alerts can be integrated with Slack via webhooks, enabling notifications to be sent automatically once data scans are complete.
+  </p>
+
+With SQL script like this 
+
+<pre><code class="language-sql"></code>
+WITH currentdate AS (
+  SELECT date_trunc('day', current_timestamp()) AS start_ts,
+         date_add(date_trunc('day', current_timestamp()), 1) AS end_ts
+),
+checks AS (
+  SELECT 'Point_of_sale_transactions' AS table_name,
+         COUNT(*) AS rows_today
+  FROM Point_of_sale_transactions post
+  WHERE post.transaction_date>= (SELECT start_ts FROM currentdate)
+  AND post.transaction_date <  (SELECT end_ts   FROM currentdate)
+  
+  UNION ALL
+
+  SELECT 'member_sales' AS table_name,
+         COUNT(*) AS rows_today
+  FROM member_sales ms
+  WHERE ms.invoice_date>= (SELECT start_ts FROM currentdate)
+  AND ms.invoice_date <  (SELECT end_ts   FROM currentdate)
+  
+)
+SELECT 'NO_EXPECTED_CURRENT_DATA' AS status, table_name, rows_today
+FROM checks
+WHERE rows_today = 0;
+</code></pre>
+
+  <p>
+    Now, every morning after our data ingestion and transformation jobs finish, the alert scans all critical tables to verify that updates have been received as expected. With these notifications in place, we are able to:
+  </p>
+
+  <ul>
+    <li>Detect issues early and begin troubleshooting before users reach out</li>
+    <li>Eliminate duplicated effort across the team when investigating the same data problems</li>
+    <li>Communicate proactively and maintain users’ trust in the data</li>
+  </ul>
+
+  <p>
+    A simple “Can we get ahead of this?” led to a lightweight solution that helped our team work more efficiently and gave the business a better experience with data.
+  </p>
 
                <a href="MyWork.html" class="btn">← Back to My Work</a>
             </div>
